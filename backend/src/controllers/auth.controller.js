@@ -33,14 +33,14 @@ const registerUser = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const file = await storageService.uploadfileToCloudinary(req.file?.path);
-    console.log("File" , file);
+    console.log("File", file);
 
     const user = await userModel.create({
       fullName,
       email,
       password: hashedPassword,
       role,
-      file : file.secure_url
+      file: file.secure_url,
     });
     const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET_KEY);
 
@@ -142,7 +142,11 @@ const logoutUser = async (req, res) => {
     });
   }
 
-  res.clearCookie("token", token);
+  res.clearCookie("token", {
+    httpOnly: true,
+    secure: true,
+    sameSite: "strict",
+  });
   res.status(200).json({
     success: true,
     message: "User LoggedOut SuccessFully",
