@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard-page {
+  padding: 20px;
+  background: #f5f6fa;
+  min-height: 100vh;
+   margin-left: 260px;
+  transition: all 0.3s ease;
+}
+
+.dashboard-page.shrink {
+  margin-left: 0;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+
+
+
+.subtitle {
+  color: gray;
+  margin-bottom: 20px;
+}
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.dashboard-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-card p {
+  color: gray;
+  margin-bottom: 10px;
+}
+
+.dashboard-card h2 {
+  font-size: 24px;
+}
+
+.green {
+  color: green;
+}
+
+.bottom {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.recent {
+  font-size: 25px;
+}
+
+.activity-item span {
+  font-size: 25px !important;
+  padding: 20px 0;
+}
+
+.activity h3 {
+  margin-bottom: 15px;
+}
+
+.activity-item {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.activity-item span {
+  font-size: 20px;
+}
+
+.actions {
+  padding: 30px;
+  height: 35vh;
+}
+
+.actions h3 {
+  margin-bottom: 15px;
+}
+
+.action-btn {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 10px;
+  background: #eef0ff;
+  color: #4a4aff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.action-btn:hover {
+  background: #dfe3ff;
+}
+
+@media (max-width: 992px) {
+  .dashboard-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .dashboard-page{
+    margin-left: 0;
+  }
+  .bottom {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+}

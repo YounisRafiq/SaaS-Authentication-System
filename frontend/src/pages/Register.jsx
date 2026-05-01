@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Register.css";
+import { useForm } from "react-hook-form"
+import { Link } from "react-router-dom"
 
-const Signup = () => {
+const Register = () => {
+
+   const { register , handleSubmit } = useForm();
+
   const [image, setImage] = useState(null);
 
   const handleImageChange = (e) => {
@@ -11,11 +16,15 @@ const Signup = () => {
     }
   };
 
-  return (
-    <div className="container">
-      <div className="card">
+  const onSubmit = (data) => {
+    console.log(data)
+  }
 
-        <div className="left">
+  return (
+    <div className="register-container">
+      <div className="register-card">
+
+        <div className="register-left">
           <div className="icon">
 
             <div className="circle">
@@ -30,6 +39,7 @@ const Signup = () => {
               type="file"
               accept="image/*"
               id="upload"
+              {...register("file")}
               onChange={handleImageChange}
               hidden
             />
@@ -39,25 +49,25 @@ const Signup = () => {
           </div>
         </div>
 
-        <div className="right">
+        <div className="register-right">
           <h2>Create Account</h2>
           <p>Sign up to get started</p>
 
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <label>Full Name</label>
-            <input type="text" placeholder="Enter your name" />
+            <input {...register("fullName")} type="text" placeholder="Enter your name" />
 
             <label>Email</label>
-            <input type="email" placeholder="you@example.com" />
+            <input {...register("email")} type="email" placeholder="you@example.com" />
 
             <label>Password</label>
-            <input type="password" placeholder="Enter your password" />
+            <input {...register("password")} type="password" placeholder="Enter your password" />
 
             <button type="submit">Register</button>
           </form>
 
           <p className="login-text">
-            Already have an account? <span>Login</span>
+            Already have an account? <Link to={"/user/login"}>Login</Link>
           </p>
         </div>
 
@@ -66,4 +76,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Register;

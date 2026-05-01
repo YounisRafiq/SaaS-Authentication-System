@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import "./Login.css";
 import shield from "../assets/shield.png";
-
+import { Link } from "react-router-dom"
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="container">
-      <div className="card">
-        <div className="left">
+    <div className="login-container">
+      <div className="login-card">
+        <div className="login-left">
           <div className="lock-shield">
             <img src={shield} alt="" />
           </div>
         </div>
 
-        <div className="right">
+        <div className="login-right">
           <h2>Welcome Back 👋</h2>
           <p>Login to your account</p>
 
@@ -48,7 +48,7 @@ const Login = () => {
           </form>
 
           <p className="register-text">
-            Don’t have an account? <a href="#">Register</a>
+            Don’t have an account? <Link to={"/user/register"}>Register</Link>
           </p>
         </div>
       </div>

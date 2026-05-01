@@ -5,15 +5,17 @@
   font-family: sans-serif;
 }
 
-.container {
+.login-container {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #0f172a;
+  background: url("../assets/bg.png");
+  background-size: cover;
+  background-position: left;
 }
 
-.card {
+.login-card {
   display: flex;
   width: 900px;
   max-width: 95%;
@@ -22,7 +24,7 @@
   background: white;
 }
 
-.left {
+.login-left {
   flex: 1;
   background: linear-gradient(to bottom right, #6a5af9, #4f46e5);
   display: flex;
@@ -44,16 +46,17 @@
   width: 250px;
 }
 
-.right {
+.login-right {
   flex: 1;
   padding: 40px;
+  background: whitesmoke;
 }
 
-.right h2 {
+.login-right h2 {
   margin-bottom: 5px;
 }
 
-.right p {
+.login-right p {
   margin-bottom: 20px;
   color: gray;
 }
@@ -137,11 +140,11 @@ button {
 }
 
 @media (max-width: 768px) {
-  .card {
+  .login-card {
     flex-direction: column;
   }
 
-  .left {
+  .login-left {
     height: 200px;
   }
 }

@@ -5,16 +5,19 @@
   font-family: sans-serif;
 }
 
-.container {
+.register-container {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #0f172a;
-  overflow-y: hidden;
+  background: url("../assets/bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* overflow-y: hidden; */
 }
 
-.card {
+.register-card {
   display: flex;
   width: 900px;
   max-width: 95%;
@@ -23,7 +26,7 @@
   background: white;
 }
 
-.left {
+.register-left {
   flex: 1;
   background: linear-gradient(to bottom right, #6a5af9, #4f46e5);
   display: flex;
@@ -76,16 +79,17 @@
   cursor: pointer;
 }
 
-.right {
+.register-right {
   flex: 1;
   padding: 40px;
+  background: whitesmoke;
 }
 
-.right h2 {
+.register-right h2 {
   margin-bottom: 5px;
 }
 
-.right p {
+.register-right p {
   margin-bottom: 20px;
   color: gray;
 }
@@ -104,8 +108,12 @@ form input {
   padding: 12px;
   margin-bottom: 15px;
   border-radius: 8px;
-  border: 1px solid #ddd;
+  border: 2px solid #ddd !important;
   outline: none;
+}
+
+form input:focus{
+  border: 2px solid #7D73F2 !important;
 }
 
 form button {
@@ -136,11 +144,11 @@ form button:hover {
 }
 
 @media (max-width: 768px) {
-  .card {
+  .register-card {
     flex-direction: column;
   }
 
-  .left {
+  .register-left {
     height: 200px;
   }
 }
