@@ -1,9 +1,9 @@
 import React from "react";
 import "./Setting.css";
 
-const Setting = ({sidebarOpen}) => {
+const Setting = () => {
   return (
-    <div className={`settings ${sidebarOpen ? "setting-shrink" : ""}`}>
+    <div className={`settings`}>
 
       <div className="settings-header">
         <div>

@@ -9,9 +9,14 @@
   padding: 20px;
   background: #f5f6fa;
   min-height: 100vh;
-   margin-left: 260px;
   transition: all 0.3s ease;
 }
+
+.dashboard-page.shrink {
+  margin-left: 100px; 
+}
+
+
 
 .dashboard-page.shrink {
   margin-left: 0;
@@ -118,9 +123,10 @@ h1 {
     grid-template-columns: 1fr 1fr;
   }
 
-  .dashboard-page{
-    margin-left: 0;
+  .dashboard-main.shrink{
+    margin-left: 260px;
   }
+
   .bottom {
     grid-template-columns: 1fr;
   }

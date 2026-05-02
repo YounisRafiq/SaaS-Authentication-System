@@ -2,13 +2,8 @@
   padding: 30px;
   background: #f5f7fb;
   min-height: 100vh;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-   margin-left: 260px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   transition: all 0.3s ease;
-}
-
-.settings.setting-shrink {
-  margin-left: 0;
 }
 
 .settings-header h2 {
@@ -26,7 +21,7 @@
   background: white;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
   margin-bottom: 20px;
 }
 
@@ -53,7 +48,9 @@
   flex: 1;
 }
 
-input, textarea, select {
+input,
+textarea,
+select {
   width: 100%;
   padding: 10px;
   margin-top: 10px;
@@ -106,10 +103,18 @@ textarea {
   border-radius: 50%;
 }
 
-.blue { background: blue; }
-.setting-green { background: green; }
-.orange { background: orange; }
-.red { background: red; }
+.blue {
+  background: blue;
+}
+.setting-green {
+  background: green;
+}
+.orange {
+  background: orange;
+}
+.red {
+  background: red;
+}
 
 .bottom-grid {
   display: grid;
@@ -120,15 +125,16 @@ textarea {
 .setting-right .setting-card {
   margin-bottom: 20px;
 }
-.setting-card ul{
-    padding:  0 15px;
+.setting-card ul {
+  padding: 0 15px;
 }
-.setting-card ul li{
-    padding: 10px 0;
+.setting-card ul li {
+  padding: 10px 0;
 }
 
-.setting-card h4 , h2{
-    padding: 5px 0;
+.setting-card h4,
+h2 {
+  padding: 5px 0;
 }
 .link {
   margin-top: 10px;
@@ -164,14 +170,12 @@ textarea {
   color: white;
 }
 
-
-
-@media(max-width: 900px) {
+@media (max-width: 900px) {
   .settings-grid {
     grid-template-columns: 1fr;
   }
 
-  .settings{
+  .settings {
     margin-left: 0;
   }
 

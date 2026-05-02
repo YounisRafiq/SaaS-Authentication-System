@@ -3,53 +3,20 @@ import Register from "../pages/Register";
 import Login from "../pages/Login";
 import Dashboard from "../pages/Dashboard";
 import DashboardPage from "../pages/DashboardPage";
-import Layout from "../pages/Layout";
 import Setting from "../pages/Setting";
+import Navbar from "../pages/Navbar";
 
 const AppRoutes = () => {
   return (
     <BrowserRouter>
       <Routes>
-
         <Route path="/user/register" element={<Register />} />
         <Route path="/user/login" element={<Login />} />
 
-        <Route
-          path="/"
-          element={
-            <Layout>
-              <Dashboard />
-            </Layout>
-          }
-        />
-
-        <Route
-          path="/user/profile"
-          element={
-            <Layout>
-              <Dashboard />
-            </Layout>
-          }
-        />
-
-        <Route
-          path="/user/dashboard"
-          element={
-            <Layout>
-              <DashboardPage />
-            </Layout>
-          }
-        />
-
-        <Route
-          path="/user/setting"
-          element={
-            <Layout>
-             <Setting/>
-            </Layout>
-          }
-        />
-
+        <Route path="/" element={<><Navbar/><Dashboard/></>} />
+        <Route path="/user/profile" element={<><Navbar/><Dashboard/></>} />
+        <Route path="/user/dashboard" element={<><Navbar/><DashboardPage/></>} />
+        <Route path="/user/setting" element={<><Navbar/><Setting/></>} />
       </Routes>
     </BrowserRouter>
   );

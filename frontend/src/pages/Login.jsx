@@ -39,7 +39,7 @@ const Login = () => {
             <div className="options">
                 <label className="remember">
                   <input type="checkbox" />
-                  Remember me
+                 <p> Remember me</p>
                 </label>
                 <a href="#" className="forgot">Forgot password ?</a>
             </div>

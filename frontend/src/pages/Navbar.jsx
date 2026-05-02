@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./Sidebar.css";
+import "./Navbar.css";
 
-const Sidebar = () => {
+const Navbar = () => {
+
+  
+  
+
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("profile");
 
-  const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen);
+  const openSidebar = () => {
+    setSidebarOpen(true);
   };
+
 
   const closeSidebar = () => {
     setSidebarOpen(false);
@@ -19,10 +24,22 @@ const Sidebar = () => {
     closeSidebar();
   };
 
+ 
+
   return (
     <>
-      <div className="menu-toggle" onClick={toggleSidebar}>
-        ☰
+      <div className="navbar">
+        <div className="menu-toggle" onClick={openSidebar}>
+          <i className="ri-menu-2-line"></i>
+        </div>
+
+        <div className="user">
+          <div className="user-info">
+            <span className="user-name">Younis</span>
+            <span className="user-role">Administrator</span>
+          </div>
+          <img src="https://i.pravatar.cc/40" alt="user" />
+        </div>
       </div>
 
       {sidebarOpen && (
@@ -30,15 +47,14 @@ const Sidebar = () => {
       )}
 
       <div className={`dashboard-sidebar ${sidebarOpen ? "open" : ""}`}>
-
         <div className="sidebar-header">
           <div className="logo">
             ⚡ SaaSApp
+            <i onClick={closeSidebar} class="ri-close-large-fill"></i>
           </div>
         </div>
 
-        <ul className="menu">
-
+        <ul  className="menu">
           <li className={activeLink === "profile" ? "active" : ""}>
             <span className="menu-icon">📊</span>
             <Link
@@ -50,7 +66,6 @@ const Sidebar = () => {
             </Link>
           </li>
 
-          {/* DASHBOARD */}
           <li className={activeLink === "dashboard" ? "active" : ""}>
             <span className="menu-icon">👤</span>
             <Link
@@ -62,10 +77,10 @@ const Sidebar = () => {
             </Link>
           </li>
 
-          {/* SETTINGS */}
           <li className={activeLink === "settings" ? "active" : ""}>
             <span className="menu-icon">⚙️</span>
-            <Link to={"/user/setting"}
+            <Link
+              to="/user/setting"
               className="all-span"
               onClick={() => handleClick("settings")}
             >
@@ -73,22 +88,16 @@ const Sidebar = () => {
             </Link>
           </li>
 
-          {/* LOGOUT */}
           <li className={activeLink === "logout" ? "active" : ""}>
             <span className="menu-icon">🚪</span>
-            <Link
-              className="all-span"
-              onClick={() => handleClick("logout")}
-            >
+            <Link className="all-span" onClick={() => handleClick("logout")}>
               Logout
             </Link>
           </li>
-
         </ul>
-
       </div>
     </>
   );
 };
 
-export default Sidebar;
+export default Navbar;

@@ -1,8 +1,8 @@
 import React from "react";
 import "./DashboardPage.css";
-const DashboardPage = ({sidebarOpen}) => {
+const DashboardPage = () => {
   return (
-    <div className={`dashboard-page ${sidebarOpen ? "shrink" : ""}`}>
+    <div className={`dashboard-page`}>
       <h1>Dashboard Overview</h1>
       <p className="subtitle">Your account summary and activity</p>
 

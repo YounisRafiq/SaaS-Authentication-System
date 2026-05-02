@@ -106,8 +106,17 @@ form input {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3px;
+  gap: 8px;
 }
+
+.options .remember p{
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 17px;
+}
+
 .options .remember input{
   margin-top: 16px;
 }
@@ -142,6 +151,15 @@ button {
 @media (max-width: 768px) {
   .login-card {
     flex-direction: column;
+  }
+
+  .login-left{
+    padding: 10px 0;
+  }
+
+  .lock-shield img{
+    width: 150px;
+    margin-top: 100px;
   }
 
   .login-left {

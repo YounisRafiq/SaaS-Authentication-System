@@ -14,7 +14,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  /* overflow-y: hidden; */
+  overflow-y: scroll;
 }
 
 .register-card {
@@ -148,7 +148,16 @@ form button:hover {
     flex-direction: column;
   }
 
-  .register-left {
-    height: 200px;
+
+  /* .register-container{
+    margin: 100px 0;
+  } */
+
+  .icon .circle{
+   margin-top: 130px;
+  }
+
+  .register-left{
+    padding: 30px 0;
   }
 }
